@@ -1,0 +1,14 @@
+$Primary-Color: #4B0082;
+$Secondary-Color: #FFD700;
+$Accent-Color: #FFFFF0;
+$Neutral-Color: #333333;
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: $Neutral-Color;
+}
