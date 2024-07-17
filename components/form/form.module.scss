@@ -1,0 +1,48 @@
+$Primary-Color: #2c3e50;
+$Secondary-Color: #ffd700;
+$Accent-Color: #2ecc71;
+$Neutral-Color: #ecf0f1;
+$Main-gradient: linear-gradient(30deg, #2c3e50, #3498db, #2ecc71);
+
+.form {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  div {
+    width: 100%;
+    display: flex;
+  }
+  .submit {
+    display: flex;
+    flex-direction: column;
+  }
+  .input,
+  .submitInput {
+    font-size: 1.2rem;
+    padding: 10px;
+    border-radius: 10px;
+    margin: 10px;
+    width: 100%;
+    outline: none;
+    border: none;
+  }
+  .submitInput {
+    background: $Primary-Color;
+    color: $Neutral-Color;
+    cursor: pointer;
+  }
+  .input::placeholder {
+    font-family: "Space Goretsk", sans-serif;
+  }
+  .tab {
+    display: flex;
+    justify-content: space-around;
+    h3 {
+      align-self: center;
+      cursor: pointer;
+      font-size: 1.5em;
+    }
+  }
+}

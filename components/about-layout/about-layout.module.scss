@@ -1,0 +1,52 @@
+@import "@/app/variables.scss";
+
+.main {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  .questions {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    border-radius: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: $Primary-Color;
+    margin-left: 10px;
+    div {
+      width: 100%;
+      height: auto;
+      background-color: white;
+    }
+    section {
+      padding: 20px;
+      background-color: $Primary-Color;
+    }
+    .mid {
+      border-top: 30px solid white;
+      border-bottom: 30px solid white;
+      border-radius: 10px 0 0 10px;
+      section {
+        border-radius: 20px;
+      }
+    }
+    .top {
+        section {
+            border-radius: 20px 20px 20px 0;
+        }
+    }   
+    .bot { 
+        section {
+            border-radius: 0 20px 20px 20px;
+        }
+    }
+    h1,
+    p {
+      color: $Neutral-Color;
+    }
+    h1 {
+        margin-bottom: 20px;
+    }
+  }
+}
