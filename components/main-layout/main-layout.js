@@ -21,7 +21,7 @@ export default function MainLayout() {
           <span className="offset">Welcome to PlanIt</span>, where we turn your
           dreams into reality with seamless and extraordinary event planning.
           Our expert team is dedicated to crafting unforgettable experiences,
-          ensuring every detail is perfect from start to finish. Whether you're
+          ensuring every detail is perfect from start to finish. Whether you&apos;re
           planning a corporate gala, a wedding, or a private party, we bring
           creativity, precision, and passion to every event we organize.
         </p>
@@ -35,7 +35,7 @@ export default function MainLayout() {
               PlanIt
             </code>
           </span>
-          , we believe that every moment should be magical, and we're here to
+          , we believe that every moment should be magical, and we&apos;re here to
           make that happen. Join us on a journey to create events that are not
           just memorable but truly extraordinary. Let us handle the complexities
           while you enjoy the celebration of a lifetime.

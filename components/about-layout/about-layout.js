@@ -40,7 +40,7 @@ export default function AboutLayout() {
             <p>
               PlanIt is your ultimate solution for seamless event management.
               Our platform is designed to help you organize, manage, and execute
-              events of any scale with ease and efficiency. Whether it's a
+              events of any scale with ease and efficiency. Whether it&apos;s a
               corporate event, a social gathering, or a large conference, PlanIt
               provides all the tools you need to ensure your event is a success.
             </p>
