@@ -1,3 +1,5 @@
+@import "@/app/variables.scss";
+
 .container {
     display: flex;
     justify-content: center;
@@ -14,9 +16,17 @@
             font-weight: bold;
             font-size: 3rem;
             margin: 20px 0 20px 0;
+            color: $Text-Color;
+        }
+        h3 {
+            color: $Text-Color;
         }
         p {
             font-size: 1rem;
+            color: $Text-Color;
+            span {
+                color: $Text-Color;
+            }
         }
     }
     .scetchboard {

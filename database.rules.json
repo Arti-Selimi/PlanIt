@@ -1,0 +1,7 @@
+{
+  "rules": {
+    ".indexOn": ["slug", "img"],
+    ".read": true,
+    ".write": true
+  }
+}

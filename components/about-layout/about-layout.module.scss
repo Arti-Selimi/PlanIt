@@ -4,6 +4,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  margin-bottom: 30px;
   .questions {
     height: 100%;
     width: 100%;
@@ -12,20 +13,20 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: $Primary-Color;
+    background-color: $Accent-Color;
     margin-left: 10px;
     div {
       width: 100%;
       height: auto;
-      background-color: white;
+      background-color: $Primary-Color;
     }
     section {
       padding: 20px;
-      background-color: $Primary-Color;
+      background-color: $Accent-Color;
     }
     .mid {
-      border-top: 30px solid white;
-      border-bottom: 30px solid white;
+      border-top: 30px solid $Primary-Color;
+      border-bottom: 30px solid $Primary-Color;
       border-radius: 10px 0 0 10px;
       section {
         border-radius: 20px;
@@ -43,10 +44,11 @@
     }
     h1,
     p {
-      color: $Neutral-Color;
+      color: $Text-Color;
     }
     h1 {
         margin-bottom: 20px;
+        color: $Text-Color;
     }
   }
 }

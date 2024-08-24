@@ -1,44 +1,44 @@
 @import "@/app/variables.scss";
 
-.grid {
-    width: 100%;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: $Primary-Color;
-    overflow-x: auto;
-    .slide {
-        background-color: white;
-        width: 100%;
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        flex-direction: column; 
-        border-radius: 5px;
-        padding: 20px;
-        margin: 20px;
-        .imageContainer {
-            position: relative;
-            width: 100%;
-            flex: 1;
-        }
-        div {
-            display: flex;
-            width: 100%;
-            height: 100%;
-            justify-content: space-between;
-            margin-top: 5px;
-            flex: 1;
-            p {
-                font-size: 1.5rem;
-            }
-        }
+.container {
+    .dummy {
+        position: relative;
+        z-index: 5;
+        bottom: -320px;
+        left: 335px;
+        background: $Main-gradient;
+        -webkit-background-clip: text;
+        background-clip: text;
+        -webkit-text-fill-color: transparent;
+        font-size: 1.75rem;
+        font-weight: bold;
     }
-}
-
-.icon {
-    width: 1.5rem;
-    cursor: pointer;
+    .title {
+        position: relative;
+        z-index: 1231541;
+        top: 350px;
+        left: 0;
+    }
+    .img {
+        position: relative;
+        z-index: 1;
+        width: 150%;
+    }
+    .button {
+        position: relative;
+        z-index: 3;
+        top: -200px;
+        left: 0;
+        border: none;
+        background-color: $Accent-Color;
+        padding: 10px;
+        color: $Text-Color;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        font-size: 1.5rem;
+    }
+    .button:hover {
+        transform: scale(1.1);
+    }
 }
