@@ -18,7 +18,7 @@
       text-align: center;
     }
     .form {
-      height: 50%;
+      height:794px;
       justify-content: space-around;
       width: 100%;
       display: flex;
@@ -32,31 +32,57 @@
         background-color: $Accent-Color;
         color: $Text-Color;
         border: none;
+        outline: none;
       }
-      .duration {
+      .date {
         width: 100%;
         display: flex;
-        justify-content: space-between;
+        justify-content: space-around;
         align-items: center;
+        input {
+          height: min-content;
+          width: 100%;
+          font-size: 1rem;
+        }
+        .dateInput {
+          display: flex;
+          flex: 3;
+          h3 {
+            align-self: center;
+          }
+        }
+        .duration {
+          display: flex;
+          flex: 4;
+          align-items: center;
+        }
       }
       .category {
         max-width: 100%;
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
         div {
-          height: 100px;
+          width: 90%;
           display: flex;
           justify-content: center;
           align-items: center;
-          padding: 20px;
-          border: 1px solid;
+          flex-direction: column;
+          padding: 5px;
           font-size: 1rem;
-          div {
-            border-radius: 500px;
-            height: 5px;
-            width: 5px;
-            position: relative;
+          background-color: $Accent-Color;
+          border-radius: 5px;
+          box-shadow: 10px 10px black;
+          cursor: pointer;
+          h1, p {
+            margin: 10px;
+            font-size: 1rem;
+          }
+          h1 {
+            color: $Text-Color;
+          }
+          p {
+            color: $Primary-Color;
           }
         }
       }

@@ -1,0 +1,16 @@
+.arrow {
+  text-align: center;
+  padding: 5px;
+  background: white;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
+  position: relative;
+  top: 70%;
+  right: 50%;
+}

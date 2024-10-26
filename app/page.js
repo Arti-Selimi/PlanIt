@@ -1,5 +1,9 @@
 import styles from "./page.module.scss";
 import Form from "@/components/form/form";
+import { library } from '@fortawesome/fontawesome-svg-core';
+import { fas } from '@fortawesome/free-solid-svg-icons';
+
+library.add(fas);
 
 export default function Landing() {
   return (
