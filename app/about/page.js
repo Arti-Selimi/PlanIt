@@ -1,18 +1,18 @@
 import React from "react";
-import styles from "./page.module.scss"
 import AboutLayout from "@/components/about-layout/about-layout";
 import Navbar from "@/components/navbar/navbar";
-import AboutGrid from "@/components/about-layout/about-grid";
+import AboutAdditional from "@/components/about-layout/about-additional";
+import ClientLayout from "../client-layout";
 
 export default function About() {
   return (
-    <div id="main">
-      <div className={styles.container} id="container">
-        <Navbar />
-        <AboutLayout />
-        <h1 className="title" style={{fontSize: "3rem"}}>Our Clients</h1>
-        <AboutGrid />
-      </div>
-    </div>
+    <ClientLayout>
+      <Navbar />
+      <AboutLayout />
+      <h1 className="title" style={{ fontSize: "3rem", textAlign: "center", border: "none" }}>
+        Our Clients
+      </h1>
+      <AboutAdditional />
+    </ClientLayout>
   );
-}
+};

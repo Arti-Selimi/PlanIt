@@ -7,21 +7,6 @@ import schedule from "@/public/images/schedule.svg";
 
 export default function Images() {
   return (
-    <>
-      {/* <Image
-        className={styles.image}
-        src={schedule}
-        width={250}
-        height={250}
-        alt="schedule"
-        objectFit="contain"
-        style={{
-          position: "absolute",
-          zIndex: "2",
-          top: "60%",
-          left: "10%",
-        }}
-      /> */}
       <Image
         className={styles.image}
         src={background}
@@ -29,15 +14,5 @@ export default function Images() {
         alt="background"
         objectFit="contain"
       />
-      {/* <Image
-        className={styles.image}
-        src={notes}
-        width={150}
-        height={150}
-        alt="Notes"
-        objectFit="contain"
-        style={{ position: "absolute", zIndex: "2", top: "0%", left: "60%" }}
-      /> */}
-    </>
   );
 }

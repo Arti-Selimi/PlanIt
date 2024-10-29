@@ -10,7 +10,8 @@
   border-radius: 50%;
   background-color: #fff;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1) inset;
-  position: relative;
-  top: 70%;
-  right: 50%;
+  position: fixed;
+  z-index: 123123;
+  bottom: 5%;
+  right: 46.5%;
 }

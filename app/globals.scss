@@ -60,11 +60,9 @@ body {
 
 #container {
   width: 100%;
-  height: max-content;
+  height: 100%;
   padding: 20px;
 }
-
-
 #active {
   background: $Main-gradient;
   -webkit-background-clip: text;

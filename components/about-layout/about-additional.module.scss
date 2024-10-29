@@ -1,0 +1,27 @@
+@import "@/app/variables.scss";
+
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60%;
+    width: 100%;
+    .img {
+        position: relative;
+        z-index: 1;
+    }
+    .button {
+        border: none;
+        background-color: $Accent-Color;
+        padding: 10px;
+        margin-right: 100px;
+        color: $Text-Color;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+        font-size: 1.5rem;
+    }
+    .button:hover {
+        transform: scale(1.1);
+    }
+}

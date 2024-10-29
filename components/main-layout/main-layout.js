@@ -13,6 +13,7 @@ export default function MainLayout() {
       };
 
   return (
+    <>
     <motion.div className={styles.container} variants={variants} initial="hidden" animate="visible" exit="hidden">
       <div className={styles.main}>
         <h3>Plan better.</h3>
@@ -45,5 +46,6 @@ export default function MainLayout() {
         <Images />
       </div>
     </motion.div>
+    </>
   );
 }
