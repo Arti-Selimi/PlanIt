@@ -12,7 +12,17 @@ export default function ClientLayout({ children }) {
     if (mainRef.current) {
       const { scrollHeight, clientHeight } = mainRef.current;
       setIsScrollable(scrollHeight > clientHeight);
-      console.log(mainRef.current.scrollTop)
+    }
+  };
+
+  const handleScroll = () => {
+    if (mainRef.current) {
+      const scrollLocation = mainRef.current.scrollTop
+      if(scrollLocation != 0) {
+        setIsScrollable(false)
+      } else {
+        setIsScrollable(true)
+      }
     }
   };
 
@@ -24,6 +34,7 @@ export default function ClientLayout({ children }) {
     const resizeObserver = new ResizeObserver(checkScrollability);
     if (mainRef.current) {
       resizeObserver.observe(mainRef.current);
+      mainRef.current.addEventListener("scroll", handleScroll);
     }
 
     return () => {
@@ -31,6 +42,7 @@ export default function ClientLayout({ children }) {
       window.removeEventListener("popstate", checkScrollability);
       if (mainRef.current) {
         resizeObserver.unobserve(mainRef.current);
+        mainRef.current.removeEventListener("scroll", handleScroll);
       }
     };
   }, []);
