@@ -26,6 +26,13 @@ export default function ClientLayout({ children }) {
     }
   };
 
+  const scrollToBottom = () => {
+    mainRef.current.scrollTo({
+      top: mainRef.current.scrollHeight,
+      behavior: 'smooth',
+    });
+  }
+
   useEffect(() => {
     checkScrollability();
     window.addEventListener("resize", checkScrollability);
@@ -51,8 +58,8 @@ export default function ClientLayout({ children }) {
     <div className={styles.main} id="main" ref={mainRef}>
       {children}
       {isScrollable && (
-        <div className={styles.arrowContainer}>
-          <ArrowDown />
+        <div className={styles.arrowContainer} >
+          <ArrowDown scrollToBottom={scrollToBottom}/>
         </div>
       )}
     </div>
