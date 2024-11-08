@@ -2,10 +2,7 @@
     position: relative;
     display: flex;
     flex-direction: column;
-  }
-  
-  .container {
-    flex: 1; 
+    overflow-y: auto;
   }
   
   .arrowContainer {
@@ -13,5 +10,6 @@
     bottom: 20px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 1;
   }
   

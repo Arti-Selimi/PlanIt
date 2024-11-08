@@ -7,17 +7,18 @@ import { useEffect, useState, useRef } from "react";
 export default function ClientLayout({ children }) {
   const [isScrollable, setIsScrollable] = useState(false);
   const mainRef = useRef(null);
+  const main = mainRef.current
 
   const checkScrollability = () => {
-    if (mainRef.current) {
-      const { scrollHeight, clientHeight } = mainRef.current;
+    if (main) {
+      const { scrollHeight, clientHeight } = main;
       setIsScrollable(scrollHeight > clientHeight);
     }
   };
 
   const handleScroll = () => {
-    if (mainRef.current) {
-      const scrollLocation = mainRef.current.scrollTop
+    const scrollLocation = main.scrollTop
+    if (main) {
       if(scrollLocation != 0) {
         setIsScrollable(false)
       } else {
@@ -27,8 +28,8 @@ export default function ClientLayout({ children }) {
   };
 
   const scrollToBottom = () => {
-    mainRef.current.scrollTo({
-      top: mainRef.current.scrollHeight,
+    main.scrollTo({
+      top: main.scrollHeight,
       behavior: 'smooth',
     });
   }
@@ -39,17 +40,17 @@ export default function ClientLayout({ children }) {
     window.addEventListener("popstate", checkScrollability);
 
     const resizeObserver = new ResizeObserver(checkScrollability);
-    if (mainRef.current) {
-      resizeObserver.observe(mainRef.current);
-      mainRef.current.addEventListener("scroll", handleScroll);
+    if (main) {
+      resizeObserver.observe(main);
+      main.addEventListener("scroll", handleScroll);
     }
 
     return () => {
       window.removeEventListener("resize", checkScrollability);
       window.removeEventListener("popstate", checkScrollability);
-      if (mainRef.current) {
-        resizeObserver.unobserve(mainRef.current);
-        mainRef.current.removeEventListener("scroll", handleScroll);
+      if (main) {
+        resizeObserver.unobserve(main);
+        main.removeEventListener("scroll", handleScroll);
       }
     };
   }, []);

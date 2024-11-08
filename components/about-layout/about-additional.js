@@ -17,11 +17,12 @@ export default function AboutAdditional() {
           <button className={styles.button}>Try our services</button>
         </Link>
         <Image
-          width="500"
-          height="500"
+          width="300"
+          height="300"
           viewBox="0 0 0 0"
           src={join}
           className={styles.img}
+          alt="image"
         />
       </div>
     </>

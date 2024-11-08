@@ -45,6 +45,11 @@ const Companies = () => {
       modules={[Autoplay]}
       className={styles.grid}
       slidesPerView={7}
+      breakpoints={{
+        320: { slidesPerView: 1 },
+        640: { slidesPerView: 3 },
+        1024: { slidesPerView: 6 }
+      }}
     >
       {companies.map((company, index) => (
         <SwiperSlide key={index} className={styles.slide}>

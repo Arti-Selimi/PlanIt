@@ -1,12 +1,12 @@
 @import "@/app/variables.scss";
 
 .right {
-    height: 100vh;
     flex: 1;
     display: flex;
     flex-direction: column;
     align-items: center;
     font-family: Arial, Helvetica, sans-serif;
+    padding: 0 100px 0 100px;
     button {
       width: 100%;
     }

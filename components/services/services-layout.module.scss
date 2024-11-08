@@ -1,13 +1,10 @@
 @import "@/app/variables.scss";
 
 .main {
-  height: 50vh;
-  width: 100%;
   display: flex;
   .left {
     display: flex;
     flex: 1;
-    height: max-content;
     align-items: center;
     flex-direction: column;
     padding: 20px;
