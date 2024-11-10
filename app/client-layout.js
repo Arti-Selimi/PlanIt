@@ -53,7 +53,7 @@ export default function ClientLayout({ children }) {
         main.removeEventListener("scroll", handleScroll);
       }
     };
-  }, []);
+  });
 
   return (
     <div className={styles.main} id="main" ref={mainRef}>
