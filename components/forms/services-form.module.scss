@@ -8,7 +8,16 @@
     font-family: Arial, Helvetica, sans-serif;
     padding: 0 100px 0 100px;
     button {
-      width: 100%;
+      background: $Primary-Color;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      padding: 5px 20px;
+      h1 {
+        font-size: 1.75rem;
+        border: none;
+        margin: 0;
+      }
     }
     input {
       border-radius: 5px;
@@ -21,7 +30,7 @@
       text-align: center;
     }
     .form {
-      height:794px;
+      height: 100%;
       justify-content: space-around;
       width: 100%;
       display: flex;
@@ -37,26 +46,32 @@
         outline: none;
       }
       .date {
-        width: 100%;
         display: flex;
-        justify-content: space-around;
+        justify-content: space-evenly;
         align-items: center;
+        min-width: 100%;
         input {
-          height: min-content;
-          width: 100%;
-          font-size: 1rem;
+          font-size: 1.25rem;
         }
         .dateInput {
           display: flex;
-          flex: 3;
+          width: 100%;
+          justify-content: space-evenly;
           h3 {
             align-self: center;
           }
         }
         .duration {
           display: flex;
-          flex: 4;
-          align-items: center;
+          flex-direction: column;
+          justify-content: space-around;
+          width: 100%;
+          .from, .to {
+            display: flex;
+            width: auto;
+            align-items: center;
+            margin: 10px;
+          }
         }
       }
       .category {

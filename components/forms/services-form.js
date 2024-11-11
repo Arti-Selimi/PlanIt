@@ -7,15 +7,11 @@ import { onSubmit } from "../database-components/log-firebase";
 
 export default function Form() {
   const [active, setActive] = useState(null);
-  const {
-    register,
-    handleSubmit,
-    setValue,
-  } = useForm();
+  const { register, handleSubmit, setValue } = useForm();
 
   const chooseButton = (index, category) => {
     setActive(index);
-    setValue("category", category)
+    setValue("category", category);
   };
 
   return (
@@ -25,10 +21,14 @@ export default function Form() {
         onSubmit={handleSubmit((data) => onSubmit(data))}
       >
         <h3>Enter the name of the company/person or the name of the event.</h3>
-        <input type="text" placeholder="Event name" {...register("name")}></input>
+        <input
+          type="text"
+          placeholder="Event name"
+          {...register("name")}
+        ></input>
         <h3>Choose the category of the plan.</h3>
         <motion.div className={styles.category}>
-        <motion.div
+          <motion.div
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => chooseButton(1, "Wedding/Family Gathering")}
@@ -63,14 +63,18 @@ export default function Form() {
             <input type="date" {...register("date")}></input>
           </motion.div>
           <motion.div className={styles.duration}>
-            <h3>From</h3>
-            <input type="time" {...register("startingTime")}></input>
-            <h3>To</h3>
-            <input type="time" {...register("endingTime")}></input>
+            <div className={styles.from}>
+              <h3>From</h3>
+              <input type="time" {...register("startingTime")}></input>
+            </div>
+            <div className={styles.to}>
+              <h3>To</h3>
+              <input type="time" {...register("endingTime")}></input>
+            </div>
           </motion.div>
         </motion.div>
         <button type="submit">
-          <h1>Plan</h1>
+          <h1 className="title">Plan</h1>
         </button>
       </motion.form>
     </motion.div>

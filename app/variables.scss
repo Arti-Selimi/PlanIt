@@ -3,4 +3,4 @@ $Secondary-Color: #163644;
 $Accent-Color: #F4D37D;
 $Text-Color: #D4DADD;
 $Neutral-Color: #2F2F2F;
-$Main-gradient: linear-gradient(45deg, $Text-Color, $Accent-Color);
+$Main-gradient: linear-gradient(45deg, $Text-Color 10%, $Accent-Color 90%);
