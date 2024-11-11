@@ -1,38 +1,19 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { getDatabase, ref, get, child } from "firebase/database";
-import { db } from "@/firebase";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faArrowUpRightFromSquare } from "@fortawesome/free-solid-svg-icons";
 import Image from "next/image";
 import { Autoplay } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import styles from "./companies.module.scss";
+import { fetchData } from "../database-components/companies-firebase";
 
 const Companies = () => {
   const [companies, setCompanies] = useState([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const dbRef = ref(db);
-        const snapshot = await get(child(dbRef, "Companies"));
-        if (snapshot.exists()) {
-          const companiesData = [];
-          snapshot.forEach((childSnapshot) => {
-            companiesData.push(childSnapshot.val());
-          });
-          setCompanies(companiesData);
-        } else {
-          console.log("No data available");
-        }
-      } catch (error) {
-        console.error("Error fetching companies: ", error.message);
-      }
-    };
-
-    fetchData();
+    fetchData(setCompanies);
   }, []);
 
   return (
@@ -61,6 +42,7 @@ const Companies = () => {
               height={100}
             />
           </div>
+          <hr />
           <div>
             <p>{company.slug}</p>
             <FontAwesomeIcon

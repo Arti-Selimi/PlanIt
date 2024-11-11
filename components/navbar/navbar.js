@@ -4,7 +4,6 @@ import React from "react";
 import Link from "next/link";
 import styles from "./navbar.module.scss";
 import { motion } from "framer-motion";
-import ArrowDown from "../arrowDown/arrowDown";
 
 export default function Navbar() {
   const navVariants = {

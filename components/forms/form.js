@@ -5,10 +5,10 @@ import { useForm } from "react-hook-form";
 import styles from "./form.module.scss";
 import { motion } from "framer-motion";
 import * as yup from "yup";
-import { onSubmit } from "./auth-firebase"
+import { onSubmit } from "../database-components/auth-firebase"
 import { useRouter } from "next/navigation";
 
-const Form = () => {
+export default function Form() {
   const {
     register,
     handleSubmit,
@@ -136,5 +136,3 @@ const Form = () => {
     </motion.form>
   );
 };
-
-export default Form;

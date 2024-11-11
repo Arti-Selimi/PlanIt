@@ -1,6 +1,5 @@
 import Image from "next/image";
-import React from "react";
-import Companies from "./[gridSlug]/companies";
+import Companies from "./companies";
 import styles from "./about-additional.module.scss";
 import join from "@/public/images/join.svg";
 import Link from "next/link";

@@ -33,7 +33,6 @@
         width: 100%;
         font-size: 1.25rem;
         background-color: $Accent-Color;
-        color: $Text-Color;
         border: none;
         outline: none;
       }
@@ -80,12 +79,6 @@
           h1, p {
             margin: 10px;
             font-size: 1rem;
-          }
-          h1 {
-            color: $Text-Color;
-          }
-          p {
-            color: $Primary-Color;
           }
         }
       }

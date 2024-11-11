@@ -13,7 +13,7 @@
 }
 
 body {
-  background-color: $Accent-Color;
+  background-color: $Primary-Color;
   color: white;
   width: 100vw;
   height: 100vh;
@@ -28,7 +28,7 @@ body {
   height: 100%;
   width: 100%;
   overflow-y: auto;
-  background-color: $Primary-Color;
+  background-color: $Neutral-Color;
   border-radius: 2px;
   box-shadow: 0 0 20px 10px rgba(0, 0, 0, 0.3);
 }

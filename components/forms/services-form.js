@@ -3,7 +3,7 @@ import styles from "./services-form.module.scss";
 import { motion } from "framer-motion";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import { onSubmit } from "./log-firebase";
+import { onSubmit } from "../database-components/log-firebase";
 
 export default function Form() {
   const [active, setActive] = useState(null);
@@ -32,7 +32,7 @@ export default function Form() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => chooseButton(1, "Wedding/Family Gathering")}
-            style={{ backgroundColor: active === 1 ? "#ffd700" : "" }}
+            style={{ backgroundColor: active === 1 ? "#00DAC6" : "" }}
           >
             <h1>Wedding/Family Gathering</h1>
             <p>Click to select</p>
@@ -41,7 +41,7 @@ export default function Form() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => chooseButton(2, "Corporate Event")}
-            style={{ backgroundColor: active === 2 ? "#ffd700" : "" }}
+            style={{ backgroundColor: active === 2 ? "#00DAC6" : "" }}
           >
             <h1>Corporate Event</h1>
             <p>Click to select</p>
@@ -50,7 +50,7 @@ export default function Form() {
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
             onClick={() => chooseButton(3, "Other")}
-            style={{ backgroundColor: active === 3 ? "#ffd700" : "" }}
+            style={{ backgroundColor: active === 3 ? "#00DAC6" : "" }}
           >
             <h1>Other</h1>
             <p>Click to select</p>

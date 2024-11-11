@@ -7,9 +7,8 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: $Primary-Color;
+    background: $Neutral-Color;
     .slide {
-        background-color: $Text-Color;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -17,6 +16,7 @@
         border-radius: 5px;
         padding: 20px;
         margin: 20px;
+        background-color: white;
         .imageContainer {
             flex: 1;
             display: flex;
@@ -33,11 +33,10 @@
             p {
                 font-size: 1.5rem;
             }
+            .icon {
+                width: 1.5rem;
+                cursor: pointer;
+            }
         }
     }
-}
-
-.icon {
-    width: 1.5rem;
-    cursor: pointer;
 }
