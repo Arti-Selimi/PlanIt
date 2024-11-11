@@ -8,8 +8,8 @@ import styles from "./arrowDown.module.scss";
 const ArrowDown = ({scrollToBottom}) => {
 
   return (
-    <div className={styles.arrow} >
-      <FontAwesomeIcon icon={faArrowDown} size="2x" onClick={scrollToBottom}/>
+    <div className={styles.arrow} onClick={scrollToBottom}>
+      <FontAwesomeIcon icon={faArrowDown} size="2x"/>
     </div>
   );
 };

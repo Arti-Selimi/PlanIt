@@ -1,16 +1,12 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import styles from "./form.module.scss";
 import { motion } from "framer-motion";
 import * as yup from "yup";
-import { auth } from "@/firebase";
-import {
-  createUserWithEmailAndPassword,
-  signInWithEmailAndPassword,
-} from "firebase/auth";
+import { onSubmit } from "./auth-firebase"
+import { useRouter } from "next/navigation";
 
 const Form = () => {
   const {
@@ -37,35 +33,6 @@ const Form = () => {
       .required("Password verification is required"),
   });
 
-  console.log(formState);
-
-  const onSubmit = async (data) => {
-    const { email, password } = data;
-
-    try {
-      if (!formState) {
-        const userCredential = await createUserWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        console.log("User signed up:", userCredential.user);
-      } else {
-        const userCredential = await signInWithEmailAndPassword(
-          auth,
-          email,
-          password
-        );
-        console.log("User logged in:", userCredential.user);
-      }
-      router.push("/home");
-    } catch (error) {
-      console.error("Error:", error.code, error.message);
-    }
-  };
-
-  console.log(errors);
-
   const variants = {
     show: {
       opacity: 1,
@@ -84,7 +51,7 @@ const Form = () => {
       initial="hide"
       animate="show"
       className={styles.form}
-      onSubmit={handleSubmit(onSubmit)}
+      onSubmit={handleSubmit((data) => onSubmit(data, formState, router))}
     >
       <div className={styles.tab}>
         <h3

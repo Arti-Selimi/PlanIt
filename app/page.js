@@ -1,5 +1,5 @@
 import styles from "./page.module.scss";
-import Form from "@/components/form/form";
+import Form from "@/components/forms/form";
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { fas } from '@fortawesome/free-solid-svg-icons';
 

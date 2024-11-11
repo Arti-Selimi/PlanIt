@@ -3,7 +3,7 @@ import Image from "next/image";
 import styles from "./services-layout.module.scss";
 import thinking from "@/public/images/thinking.svg";
 import card from "@/public/images/card.svg";
-import Form from "./services-form";
+import Form from "../forms/services-form";
 
 export default function Layout() {
   return (

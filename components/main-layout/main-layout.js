@@ -4,8 +4,13 @@ import React from "react";
 import styles from "./main-layout.module.scss";
 import Images from "./images";
 import {motion} from "framer-motion"
+import { auth } from "@/firebase";
 
 export default function MainLayout() {
+
+    const user = auth.currentUser
+
+    const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
     const variants = {
         hidden: { opacity: 0, y: -20, transition: { delay:0.5, duration: 0.5, ease: "easeIn" } },
@@ -16,7 +21,7 @@ export default function MainLayout() {
     <>
     <motion.div className={styles.container} variants={variants} initial="hidden" animate="visible" exit="hidden">
       <div className={styles.main}>
-        <h3>Plan better.</h3>
+        <h3>Hey there {capitalize(user.displayName.split(" ")[0].toLowerCase())}, Plan better.</h3>
         <h1>Your Partner in Perfect Planning</h1>
         <p>
           <span className="offset">Welcome to PlanIt</span>, where we turn your
