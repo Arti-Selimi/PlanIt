@@ -7,7 +7,7 @@ export const onSubmit = async (data) => {
   const { Name = "", Category = "", Date = "", startingTime = "", endingTime = "" } = data;
   const user = auth.currentUser;
 
-  if (!user) {
+  if (!user.displayName) {
     window.alert("Please log in to submit an event.");
     return;
   }

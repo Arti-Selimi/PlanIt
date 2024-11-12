@@ -25,9 +25,10 @@
     border: none;
   }
   .submitInput {
-    background: $Secondary-Color;
-    color: $Accent-Color;
+    background: $Accent-Color;
+    color: $Primary-Color;
     cursor: pointer;
+    font-weight: bold;
   }
   .input::placeholder {
     font-family: "Space Goretsk", sans-serif;
@@ -39,7 +40,7 @@
       align-self: center;
       cursor: pointer;
       font-size: 1.5em;
-      color: $Text-Color;
+      color: $Neutral-Color;
     }
   }
 }
