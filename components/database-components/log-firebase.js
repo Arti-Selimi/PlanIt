@@ -7,14 +7,15 @@ export const onSubmit = async (data) => {
   const { Name = "", Category = "", Date = "", startingTime = "", endingTime = "" } = data;
   const user = auth.currentUser;
 
-  console.log(data)
+  if (!user) {
+    window.alert("Please log in to submit an event.");
+    return;
+  }
 
   try {
     const eventsRef = ref(db, `events/${user.displayName}`);
-
     await push(eventsRef, data);
-
-    console.log("Event successfully saved to Firebase!");
+    window.confirm("Event successfully saved to Firebase!");
   } catch (error) {
     console.error("Error saving event to Firebase:", error);
   }
