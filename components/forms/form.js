@@ -2,35 +2,39 @@
 
 import { useState } from "react";
 import { useForm } from "react-hook-form";
-import styles from "./form.module.scss";
-import { motion } from "framer-motion";
+import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import { onSubmit } from "../database-components/auth-firebase"
+import { motion } from "framer-motion";
+import styles from "./form.module.scss";
+import { onSubmit } from "../database-components/auth-firebase";
 import { useRouter } from "next/navigation";
 
 export default function Form() {
-  const {
-    register,
-    handleSubmit,
-    formState: { errors },
-  } = useForm();
   const [formState, setFormState] = useState(false);
   const router = useRouter();
 
   const schema = yup.object().shape({
-    email: yup
-      .string()
-      .email("Please use a valid e-mail")
-      .required("E-mail is required"),
-    password: yup
-      .string()
-      .min(8, "Password must contain 8-20 characters")
-      .max(20, "Password must contain 8-20 characters")
-      .required("Password is required"),
-    verifiedPassword: yup
-      .string()
-      .oneOf([yup.ref("password"), null], "Must match password")
-      .required("Password verification is required"),
+    Name: formState
+      ? yup.string()
+      : yup.string().required("First name is required"),
+    Surname: formState
+      ? yup.string()
+      : yup.string().required("Last name is required"),
+    email: yup.string().email("Invalid email").required(),
+    password: yup.string().min(8).max(20).required(),
+    verifiedPassword: formState
+      ? yup.string()
+      : yup.string()
+          .oneOf([yup.ref("password"), null], "Passwords must match")
+          .required(),
+  });
+
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
+    resolver: yupResolver(schema),
   });
 
   const variants = {
@@ -67,7 +71,7 @@ export default function Form() {
           Log In
         </h3>
       </div>
-      {!formState ? (
+      {!formState && (
         <motion.div
           variants={variants}
           initial="hide"
@@ -75,45 +79,48 @@ export default function Form() {
           className={styles.name}
         >
           <input
+            name="Name"
             className={styles.input}
             type="text"
             placeholder="First Name"
-            {...register("Name", { required: "First name is required" })}
+            {...register("Name")}
           />
+          <p>{errors.Name?.message}</p>
           <input
+            name="Surname"
             className={styles.input}
             type="text"
             placeholder="Last Name"
-            {...register("Surname", { required: "Last name is required" })}
+            {...register("Surname")}
           />
+          <p>{errors.Surname?.message}</p>
         </motion.div>
-      ) : (
-        ""
       )}
       <div className={styles.email}>
         <input
+          name="Email"
           className={styles.input}
           type="email"
           placeholder="email@example.com"
-          {...register("email", { required: "Email is required" })}
+          {...register("email")}
         />
       </div>
       <div className={styles.submit}>
         <motion.div>
           <input
+            name="Password"
             type="password"
             placeholder="Password"
             className={styles.input}
-            {...register("password", { required: "password is required" })}
+            {...register("password")}
           />
           {!formState && (
             <input
+              name="Verification"
               type="password"
               placeholder="Verify Password"
               className={styles.input}
-              {...register("verifiedPassword", {
-                required: "Please verify your password",
-              })}
+              {...register("verifiedPassword")}
             />
           )}
         </motion.div>
@@ -135,4 +142,4 @@ export default function Form() {
       </div>
     </motion.form>
   );
-};
+}

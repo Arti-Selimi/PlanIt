@@ -8,6 +8,8 @@ import { auth } from "@/firebase";
 export const onSubmit = async (data, formState, router) => {
   const { Name, Surname, email, password } = data;
 
+  console.log("okkk")
+
   try {
     if (!formState) {
       const userCredential = await createUserWithEmailAndPassword(
@@ -20,6 +22,7 @@ export const onSubmit = async (data, formState, router) => {
       });
       console.log("User signed up:", userCredential.user);
     } else {
+      console.log("okej")
       const userCredential = await signInWithEmailAndPassword(
         auth,
         email,
@@ -29,6 +32,6 @@ export const onSubmit = async (data, formState, router) => {
     }
     router.push("/home");
   } catch (error) {
-    console.error("Error:", error.code, error.message);
+    alert("Please fill all the required fields, if the error still pops up then there is an account already registered with that email address");
   }
 };
