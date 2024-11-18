@@ -6,6 +6,19 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  .errorsContainer {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background-color: red;
+    width: 70%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    .error, faInfoCircle{
+      color: white !important;
+    }
+  }
   div {
     width: 100%;
     display: flex;
@@ -19,7 +32,7 @@
     font-size: 1.2rem;
     padding: 10px;
     border-radius: 10px;
-    margin: 10px;
+    margin: 5px;
     width: 100%;
     outline: none;
     border: none;

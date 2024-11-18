@@ -8,6 +8,8 @@ import { motion } from "framer-motion";
 import styles from "./form.module.scss";
 import { onSubmit } from "../database-components/auth-firebase";
 import { useRouter } from "next/navigation";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faInfoCircle } from "@fortawesome/free-solid-svg-icons";
 
 export default function Form() {
   const [formState, setFormState] = useState(false);
@@ -24,7 +26,8 @@ export default function Form() {
     password: yup.string().min(8).max(20).required(),
     verifiedPassword: formState
       ? yup.string()
-      : yup.string()
+      : yup
+          .string()
           .oneOf([yup.ref("password"), null], "Passwords must match")
           .required(),
   });
@@ -50,6 +53,8 @@ export default function Form() {
     },
   };
 
+  console.log(errors.Name ? true : false);
+
   return (
     <motion.form
       initial="hide"
@@ -57,6 +62,18 @@ export default function Form() {
       className={styles.form}
       onSubmit={handleSubmit((data) => onSubmit(data, formState, router))}
     >
+      {errors.Name || errors.Surname || errors.email || errors.password || errors.verifiedPassword ? (
+        <div className={styles.errorsContainer}>
+          <FontAwesomeIcon
+            icon={faInfoCircle}
+            size="lg"
+            className={styles.error}
+          />
+          <span className={styles.error}>Please fill out every field.</span>
+        </div>
+      ) : (
+        ""
+      )}
       <div className={styles.tab}>
         <h3
           id={!formState ? "active" : undefined}
@@ -85,7 +102,6 @@ export default function Form() {
             placeholder="First Name"
             {...register("Name")}
           />
-          <p>{errors.Name?.message}</p>
           <input
             name="Surname"
             className={styles.input}
@@ -93,7 +109,6 @@ export default function Form() {
             placeholder="Last Name"
             {...register("Surname")}
           />
-          <p>{errors.Surname?.message}</p>
         </motion.div>
       )}
       <div className={styles.email}>

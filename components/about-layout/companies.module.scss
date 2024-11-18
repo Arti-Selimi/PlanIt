@@ -1,9 +1,8 @@
 @import "@/app/variables.scss";
 
 .grid {
-    width: 100%;
-    height: 100%;
-    min-height: 20vh;
+    max-width: 100%;
+    min-height: 40%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,8 +13,7 @@
         align-items: center;
         flex-direction: column; 
         border-radius: 5px;
-        padding: 20px;
-        margin: 20px;
+        padding: 10px;
         background-color: white;
         .imageContainer {
             flex: 1;
@@ -39,4 +37,11 @@
             }
         }
     }
+}
+.loading {
+    position: relative;
+    left: -35%;
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
 }

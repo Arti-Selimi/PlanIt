@@ -26,6 +26,7 @@ export default function Form() {
           type="text"
           placeholder="Event name"
           {...register("name")}
+          required
         ></input>
         <h3>Choose the category of the plan.</h3>
         <motion.div className={styles.category}>
@@ -61,16 +62,16 @@ export default function Form() {
         <motion.div className={styles.date}>
           <motion.div className={styles.dateInput}>
             <h3>On</h3>
-            <input name="Date" type="date" {...register("date")}></input>
+            <input name="Date" type="date" {...register("date")} required></input>
           </motion.div>
           <motion.div className={styles.duration}>
             <div className={styles.from}>
               <h3>From</h3>
-              <input name="StartingTime" type="time" {...register("startingTime")}></input>
+              <input name="StartingTime" type="time" {...register("startingTime")} required></input>
             </div>
             <div className={styles.to}>
               <h3>To</h3>
-              <input name="EndingTime" type="time" {...register("endingTime")}></input>
+              <input name="EndingTime" type="time" {...register("endingTime")} required></input>
             </div>
           </motion.div>
         </motion.div>
