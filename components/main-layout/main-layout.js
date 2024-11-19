@@ -3,12 +3,12 @@
 import styles from "./main-layout.module.scss";
 import { motion } from "framer-motion";
 import { auth } from "@/firebase";
-import React from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
 import background from "@/public/images/background.svg"
 
 export default function MainLayout() {
-  const user = auth.currentUser;
+  const [user, setUser] = useState(null);
 
   const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
 
@@ -25,6 +25,19 @@ export default function MainLayout() {
     },
   };
 
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setUser(user);
+      } else {
+        setUser(null); 
+      }
+    });
+  
+    return () => unsubscribe();
+  }, []);
+  
+
   return (
     <>
       <motion.div
@@ -36,7 +49,7 @@ export default function MainLayout() {
       >
         <div className={styles.main}>
           <h3>
-            Hey there {user ? capitalize(user.displayName.split(" ")[0].toLowerCase()) : "User"}
+            Hey there {user ? capitalize(user.displayName.split(" ")[0].toLowerCase()) : ""}
             , Plan better.
           </h3>
           <h1>Your Partner in Perfect Planning</h1>

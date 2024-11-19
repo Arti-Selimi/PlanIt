@@ -1,0 +1,39 @@
+@import "@/app/variables.scss";
+
+.eventContainer {
+  margin-top: 40px;
+  height: 100%;
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding: 40px;
+  gap: 20px;
+  border-radius: 5px;
+  background-color: $Primary-Color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 5px 5px inset;
+  .event {
+    min-height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    border-radius: 5px;
+    padding: 10px;
+    background-color: $Accent-Color;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    &:hover {
+      transform: scale(1.05);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    p {
+      color: $Neutral-Color;
+      font-style: italic;
+    }
+    span {
+      color: $Neutral-Color;
+      font-weight: bold;
+      font-style: normal;
+    }
+  }
+}
